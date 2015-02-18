@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectTypeGuids>{F5B4F3BC-B597-4E2B-B552-EF5D8A32436F};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{27CCEE10-7BD7-4F30-9821-42186EE1578A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>BraintreeBindings</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>BraintreeBindings</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="monotouch" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+    <Folder Include="Resources\Braintree-Drop-In-Localization.bundle\" />
+    <Folder Include="Resources\Braintree-UI-Localization.bundle\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingApiDefinition Include="ApiDefinition.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ObjcBindingCoreSource Include="StructsAndEnums.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Xamarin.ObjcBinding.CSharp.targets" />
+  <ItemGroup>
+    <ObjcBindingNativeLibrary Include="Braintree.a" />
+    <ObjcBindingNativeLibrary Include="libPayPalMobile.a" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Braintree.linkwith.cs">
+      <DependentUpon>Braintree.a</DependentUpon>
+    </Compile>
+    <Compile Include="libPayPalMobile.linkwith.cs">
+      <DependentUpon>libPayPalMobile.a</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Braintree-Drop-In-Localization.bundle\da.lproj\Drop-In.strings" />
+    <BundleResource Include="Resources\Braintree-Drop-In-Localization.bundle\de.lproj\Drop-In.strings" />
+    <BundleResource Include="Resources\Braintree-Drop-In-Localization.bundle\en.lproj\Drop-In.strings" />
+    <BundleResource Include="Resources\Braintree-Drop-In-Localization.bundle\en_AU.lproj\Drop-In.strings" />
+    <BundleResource Include="Resources\Braintree-Drop-In-Localization.bundle\en_CA.lproj\Drop-In.strings" />
+    <BundleResource Include="Resources\Braintree-Drop-In-Localization.bundle\en_GB.lproj\Drop-In.strings" />
+    <BundleResource Include="Resources\Braintree-Drop-In-Localization.bundle\en_UK.lproj\Drop-In.strings" />
+    <BundleResource Include="Resources\Braintree-Drop-In-Localization.bundle\es.lproj\Drop-In.strings" />
+    <BundleResource Include="Resources\Braintree-Drop-In-Localization.bundle\es_ES.lproj\Drop-In.strings" />
+    <BundleResource Include="Resources\Braintree-Drop-In-Localization.bundle\fr.lproj\Drop-In.strings" />
+    <BundleResource Include="Resources\Braintree-Drop-In-Localization.bundle\fr_CA.lproj\Drop-In.strings" />
+    <BundleResource Include="Resources\Braintree-Drop-In-Localization.bundle\fr_FR.lproj\Drop-In.strings" />
+    <BundleResource Include="Resources\Braintree-Drop-In-Localization.bundle\he.lproj\Drop-In.strings" />
+    <BundleResource Include="Resources\Braintree-Drop-In-Localization.bundle\it.lproj\Drop-In.strings" />
+    <BundleResource Include="Resources\Braintree-Drop-In-Localization.bundle\nb.lproj\Drop-In.strings" />
+    <BundleResource Include="Resources\Braintree-Drop-In-Localization.bundle\nl.lproj\Drop-In.strings" />
+    <BundleResource Include="Resources\Braintree-Drop-In-Localization.bundle\pl.lproj\Drop-In.strings" />
+    <BundleResource Include="Resources\Braintree-Drop-In-Localization.bundle\pt.lproj\Drop-In.strings" />
+    <BundleResource Include="Resources\Braintree-Drop-In-Localization.bundle\ru.lproj\Drop-In.strings" />
+    <BundleResource Include="Resources\Braintree-Drop-In-Localization.bundle\sv.lproj\Drop-In.strings" />
+    <BundleResource Include="Resources\Braintree-Drop-In-Localization.bundle\tr.lproj\Drop-In.strings" />
+    <BundleResource Include="Resources\Braintree-Drop-In-Localization.bundle\zh-Hans.lproj\Drop-In.strings" />
+    <BundleResource Include="Resources\Braintree-UI-Localization.bundle\da.lproj\UI.strings" />
+    <BundleResource Include="Resources\Braintree-UI-Localization.bundle\de.lproj\UI.strings" />
+    <BundleResource Include="Resources\Braintree-UI-Localization.bundle\en.lproj\UI.strings" />
+    <BundleResource Include="Resources\Braintree-UI-Localization.bundle\en_AU.lproj\UI.strings" />
+    <BundleResource Include="Resources\Braintree-UI-Localization.bundle\en_CA.lproj\UI.strings" />
+    <BundleResource Include="Resources\Braintree-UI-Localization.bundle\en_GB.lproj\UI.strings" />
+    <BundleResource Include="Resources\Braintree-UI-Localization.bundle\en_UK.lproj\UI.strings" />
+    <BundleResource Include="Resources\Braintree-UI-Localization.bundle\es.lproj\UI.strings" />
+    <BundleResource Include="Resources\Braintree-UI-Localization.bundle\es_ES.lproj\UI.strings" />
+    <BundleResource Include="Resources\Braintree-UI-Localization.bundle\fr.lproj\UI.strings" />
+    <BundleResource Include="Resources\Braintree-UI-Localization.bundle\fr_CA.lproj\UI.strings" />
+    <BundleResource Include="Resources\Braintree-UI-Localization.bundle\fr_FR.lproj\UI.strings" />
+    <BundleResource Include="Resources\Braintree-UI-Localization.bundle\he.lproj\UI.strings" />
+    <BundleResource Include="Resources\Braintree-UI-Localization.bundle\it.lproj\UI.strings" />
+    <BundleResource Include="Resources\Braintree-UI-Localization.bundle\nb.lproj\UI.strings" />
+    <BundleResource Include="Resources\Braintree-UI-Localization.bundle\nl.lproj\UI.strings" />
+    <BundleResource Include="Resources\Braintree-UI-Localization.bundle\pl.lproj\UI.strings" />
+    <BundleResource Include="Resources\Braintree-UI-Localization.bundle\pt.lproj\UI.strings" />
+    <BundleResource Include="Resources\Braintree-UI-Localization.bundle\ru.lproj\UI.strings" />
+    <BundleResource Include="Resources\Braintree-UI-Localization.bundle\sv.lproj\UI.strings" />
+    <BundleResource Include="Resources\Braintree-UI-Localization.bundle\tr.lproj\UI.strings" />
+    <BundleResource Include="Resources\Braintree-UI-Localization.bundle\zh-Hans.lproj\UI.strings" />
+  </ItemGroup>
+</Project>
