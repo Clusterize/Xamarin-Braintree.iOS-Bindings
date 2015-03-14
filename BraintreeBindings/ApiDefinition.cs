@@ -4,6 +4,8 @@ using MonoTouch.ObjCRuntime;
 
 namespace BraintreeBindings
 {
+	delegate void CompletionCallback (string nonce, NSError error);
+
 	[BaseType (typeof (NSObject))]
 	interface Braintree
 	{
@@ -12,6 +14,10 @@ namespace BraintreeBindings
 
 		[Export ("dropInViewControllerWithDelegate:")]
 		BTDropInViewController CreateDropInViewController (BTDropInViewControllerDelegate dropInDelegate);
+
+		[Export ("tokenizeCard:completion:")]
+		[Async]
+		void TokenizeCard (BTClientCardTokenizationRequest request, CompletionCallback callback);
 	}
 
 	[BaseType (typeof (UIViewController))]
@@ -60,5 +66,30 @@ namespace BraintreeBindings
 	{
 		[Export ("nonce")]
 		string Nonce { get; }
+	}
+
+	[BaseType (typeof (NSObject))]
+	interface BTClientCardTokenizationRequest
+	{
+		[Export ("number")]
+		string Number { get; set; }
+
+		[Export ("expirationMonth")]
+		string ExpirationMonth { get; set; }
+
+		[Export ("expirationYear")]
+		string ExpirationYear { get; set; }
+
+		[Export ("expirationDate")]
+		string ExpirationDate { get; set; }
+
+		[Export ("cvv")]
+		string CVV { get; set; }
+
+		[Export ("postalCode")]
+		string PostalCode { get; set; }
+
+		[Export ("additionalParameters")]
+		NSDictionary AdditionalParameters { get; set; }
 	}
 }
