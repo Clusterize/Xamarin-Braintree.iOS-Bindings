@@ -1,6 +1,6 @@
-﻿using MonoTouch.Foundation;
-using MonoTouch.UIKit;
-using MonoTouch.ObjCRuntime;
+﻿using Foundation;
+using UIKit;
+using ObjCRuntime;
 
 namespace BraintreeBindings
 {
