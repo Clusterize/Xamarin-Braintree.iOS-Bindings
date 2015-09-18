@@ -31,7 +31,7 @@ PODS:
     - Braintree/API
 
 DEPENDENCIES:
-  - Braintree
+  - Braintree (= 3.9.3)
 
 SPEC CHECKSUMS:
   Braintree: 996027dcc8633569f2405bc57dca11f367050c60

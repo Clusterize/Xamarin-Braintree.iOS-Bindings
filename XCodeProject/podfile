@@ -1,1 +1,1 @@
-pod 'Braintree'
+pod 'Braintree', '3.9.3'
